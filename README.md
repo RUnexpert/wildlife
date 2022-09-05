@@ -3,6 +3,9 @@
 
 Main resolution: 1440px;
 Responsive? Yes
+Technologies: HTML5, CSS3, SASS
+
+[Project](https://runexpert.github.io/wildlife/)
 
 ## Why this project?
 
