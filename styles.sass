@@ -1,11 +1,13 @@
 html
   box-sizing: border-box
-  font-size: 16px
 
-*, *:after, *:before
+
+*, *::after, *::before
   box-sizing: inherit
 
+
 body
+  font-size: 16px
   font-family: 'Open Sans', sans-serif
   color: var(--font-light)
 
@@ -25,7 +27,6 @@ body
 
 .header
   background: #020A0D url("./assets/images/survival.png") no-repeat top center
-
   .container
     display: flex
     align-items: center
@@ -34,14 +35,11 @@ body
 .logo-container
   padding-top: 15px
   display: flex
-
   .svg-logo
     cursor: pointer
-
     &:hover path
       fill: var(--orange-light)
       transition: 0.5s
-
   .logo
     margin-left: 15px
     font-family: var(--header-font)
@@ -49,97 +47,99 @@ body
     cursor: pointer
     line-height: 60px
     text-transform: uppercase
-
+    text-decoration: none
+    color: #F1F1F1
     &:hover
       transition: 0.5s
       color: var(--orange-light)
+.nav
+  display: flex
+  align-items: center      
 
 .header-list
   padding-top: 15px
   height: 50px
   display: flex
   align-items: center
-  .header-item
-    margin-right: 60px
-    list-style: none
-    font-size: 1.5rem
-    line-height: 60px
-    &:last-child
-      margin-right: 0
-    a
-      color: var(--font-light)
-      text-decoration: none
-
-      &:hover
-        transition: 0.5s
-        color: var(--orange-light)
-
-    button
-      cursor: pointer
-
-    .search
-      height: 23px
-      width: 23px
-      cursor: pointer
-
-      &:hover path
-        transition: 0.5s
-        fill: var(--orange-light)
-
-    .sign-in
-      width: 120px
-      height: 50px
-      font-family: 'Roboto'
-      font-size: 23px
-      line-height: 27px
-      color: var(--font-light)
-      border: 2px solid var(--orange-main)
-      border-radius: 5px
-      background: none
-      padding: 0 23px
-      &:hover
-        transition: 0.5s
-        background: var(--orange-main)
-        &:active
-          transition: .5s
-          background: var(--orange-dark)
-          border-color: var(--orange-dark)
-
-.survival
-  height: 700px
-  background: #020A0D url("./assets/images/survival.png") no-repeat center -80px
-  .title
-    margin: 0
-    padding-top: 7.5rem
-    color: var(--orange-main)
-    font-size: 3rem
-    font-weight: 400
-    line-height: 4.5rem
-    letter-spacing: 2px
-  .survival-text
-    margin-top: 50px
-    width: 274px
-    height: 108px
-    font-size: 18px
-    line-height: 27px
-
-  .survival-button
-    margin-top: 30px
-    font-size: 23px
-    width: 160px
-    height: 60px
-    background: var(--orange-main)
-    border: 1px solid var(--orange-main)
-    border-radius: 5px
+  margin-right: 65px
+.header-item
+  margin-right: 60px
+  list-style: none
+  font-size: 1.5rem
+  line-height: 60px
+  &:last-child
+    margin-right: 0
+  a
     color: var(--font-light)
-    cursor: pointer
+    text-decoration: none
     &:hover
-      transition: .5s
-      background: var(--orange-light)
+      transition: 0.5s
+      color: var(--orange-light)
+  button
+    cursor: pointer
+  .search
+    height: 23px
+    width: 23px
+    cursor: pointer
+    &:hover path
+      transition: 0.5s
+      fill: var(--orange-light)
+
+.sign-in
+  width: 120px
+  height: 50px
+  font-family: 'Roboto'
+  font-size: 23px
+  line-height: 27px
+  color: var(--font-light)
+  border: 2px solid var(--orange-main)
+  border-radius: 5px
+  background: none
+  padding: 0 23px
+  cursor: pointer
+  &:hover
+    transition: 0.5s
+    background: var(--orange-main)
     &:active
       transition: .5s
       background: var(--orange-dark)
       border-color: var(--orange-dark)
+
+.survival
+  height: 700px
+  background: #020A0D url("./assets/images/survival.png") no-repeat center -82px
+.title
+  margin: 0
+  padding-top: 7.5rem
+  color: var(--orange-main)
+  font-size: 3rem
+  font-weight: 400
+  line-height: 4.5rem
+  letter-spacing: 2px
+.survival-text
+  margin-top: 50px
+  width: 274px
+  height: 108px
+  font-size: 18px
+  line-height: 27px
+
+.survival-button
+  margin-top: 30px
+  font-size: 23px
+  width: 160px
+  height: 60px
+  background: var(--orange-main)
+  border: 1px solid var(--orange-main)
+  border-radius: 5px
+  color: var(--font-light)
+  cursor: pointer
+  &:hover
+    transition: .5s
+    background: var(--orange-light)
+  &:active
+    transition: .5s
+    background: var(--orange-dark)
+    border-color: var(--orange-dark)
 
 .articles
   height: 1368px
@@ -160,16 +160,14 @@ body
     line-height: 36px
     color: var(--font-grey)
     text-align: center
-
   .animal-card
     width: 300px
     height: 360px
-
   .carousel
-    max-width: 1020px
     display: flex
     margin: 0 auto
     margin-top: 120px
+    align-items: center
     .animal-card
       width: 300px
       height: 360px
@@ -197,16 +195,14 @@ body
 
 .left-arrow, .right-arrow
   cursor: pointer
-  position: relative
-  top: 160px
   &:hover path
     transition: .5s
     fill: white
 
 .left-arrow
-  right: 60px
+  margin-right: 60px
 .right-arrow
-  left: 60px
+  margin-left: 60px
 
 .email-container
   margin-top: 60px
@@ -220,7 +216,8 @@ body
   text-align: center
   color: var(--font-dark)
 .email
-  width: 540px
+  max-width: 540px
+  width: 100%
   height: 60px
   margin-right: -4px
   background: none
@@ -265,33 +262,32 @@ input.email
   text-indent: 15px
 
 .footer
-  height: 360px
-  background: #020A0D
+  height: 360px 
+  background: url("./assets/images/footer.png") no-repeat top center, #020A0D
   .container
     height: 360px
-    background: url("./assets/images/footer.png") no-repeat top center
     display: flex
     align-items: center
     justify-content: space-around
-    .footer-nav
-      display: flex
-      align-items: center
+  .footer-nav
+    display: flex
+    align-items: center
 
 .footer-list
   display: flex
   flex-wrap: wrap
-  .footer-item
-    list-style: none
-    margin-right: 85px
-    .footer-link
-      color: var(--font-light)
-      text-decoration: none
-      font-weight: 400
-      font-size: 23px
-      line-height: 60px
-      &:hover
-        transition: 0.5s
-        color: var(--orange-light)
+.footer-item
+  list-style: none
+  margin-right: 85px
+.footer-link
+  color: var(--font-light)
+  text-decoration: none
+  font-weight: 400
+  font-size: 23px
+  line-height: 60px
+  &:hover
+    transition: 0.5s
+    color: var(--orange-light)
 
 .media-list
   display: flex
@@ -306,20 +302,79 @@ input.email
 
 // responsive
 
-@media (max-width: 1160px)
-  .left-arrow
-    right: -300px
-  .right-arrow
-    left: -300px
-  .animal-card:nth-child(2)
-    display: none
-    opacity: 0
-  .animal-card:nth-child(4)
-    display: none
-    opacity: 0
+@media (max-width: 1200px)
+  .container
+    padding: 0 20px
+
+@media (max-width: 900px)
+  .container
+    padding: 0 20px
+  .articles
+    .carousel
+      justify-content: center
+      .left-arrow
+        margin-right: 20px
+      .right-arrow
+        margin-left: 20px
+      .animal-card:nth-child(2)
+        display: none
+      .animal-card:nth-child(3)
+        margin-right: 0
+      .animal-card:nth-child(4)
+        display: none
   .footer-list
     flex-flow: column
+  .footer-item
+    margin-right: 25px
   .media-list li
     margin-right: 15px
-  .footer-list .footer-item
-    margin-right: 10px
+
+
+@media (max-width: 800px)
+  .container 
+    max-width: 700px
+  .header-list
+    .header-item
+      margin-right: 40px
+      font-size: 1rem
+  .logo-container
+    .logo
+      font-size: 1.5rem
+  .sign-in
+    width: 100px
+    height: 35px
+    font-size: 1rem
+  .survival-button
+    width: 120px
+    height: 40px
+    font-size: 1rem
+
+
+@media (max-width: 700px)
+  .title
+    padding-top: 4rem
+    font-size: 2.5rem
+  .survival-text
+    margin-top: 25px
+  .header-list, .footer-list
+    display: none
+  .survival
+    height: 500px
+    background: #020A0D url(./assets/images/survival.png) no-repeat center -76px
+    position: relative
+  .survival::before
+    content: ''
+    position: absolute
+    left: 0 
+    right: 0 
+    top: 0 
+    bottom: 0
+    z-index: -1
+    filter: blur(5px)
+  .email-title
+    margin-top: 120px
+  .footer > .container > .logo-container
+    display: none
+  .footer, .footer > .container
+    height: 180px
+  

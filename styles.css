@@ -1,13 +1,13 @@
 html {
   box-sizing: border-box;
-  font-size: 16px;
 }
 
-*, *:after, *:before {
+*, *::after, *::before {
   box-sizing: inherit;
 }
 
 body {
+  font-size: 16px;
   font-family: "Open Sans", sans-serif;
   color: var(--font-light);
 }
@@ -55,10 +55,17 @@ body {
   cursor: pointer;
   line-height: 60px;
   text-transform: uppercase;
+  text-decoration: none;
+  color: #F1F1F1;
 }
 .logo-container .logo:hover {
   transition: 0.5s;
   color: var(--orange-light);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
 }
 
 .header-list {
@@ -66,37 +73,40 @@ body {
   height: 50px;
   display: flex;
   align-items: center;
+  margin-right: 65px;
 }
-.header-list .header-item {
+
+.header-item {
   margin-right: 60px;
   list-style: none;
   font-size: 1.5rem;
   line-height: 60px;
 }
-.header-list .header-item:last-child {
+.header-item:last-child {
   margin-right: 0;
 }
-.header-list .header-item a {
+.header-item a {
   color: var(--font-light);
   text-decoration: none;
 }
-.header-list .header-item a:hover {
+.header-item a:hover {
   transition: 0.5s;
   color: var(--orange-light);
 }
-.header-list .header-item button {
+.header-item button {
   cursor: pointer;
 }
-.header-list .header-item .search {
+.header-item .search {
   height: 23px;
   width: 23px;
   cursor: pointer;
 }
-.header-list .header-item .search:hover path {
+.header-item .search:hover path {
   transition: 0.5s;
   fill: var(--orange-light);
 }
-.header-list .header-item .sign-in {
+
+.sign-in {
   width: 120px;
   height: 50px;
   font-family: "Roboto";
@@ -107,12 +117,13 @@ body {
   border-radius: 5px;
   background: none;
   padding: 0 23px;
+  cursor: pointer;
 }
-.header-list .header-item .sign-in:hover {
+.sign-in:hover {
   transition: 0.5s;
   background: var(--orange-main);
 }
-.header-list .header-item .sign-in:hover:active {
+.sign-in:hover:active {
   transition: 0.5s;
   background: var(--orange-dark);
   border-color: var(--orange-dark);
@@ -120,9 +131,10 @@ body {
 
 .survival {
   height: 700px;
-  background: #020A0D url("./assets/images/survival.png") no-repeat center -80px;
+  background: #020A0D url("./assets/images/survival.png") no-repeat center -82px;
 }
-.survival .title {
+
+.title {
   margin: 0;
   padding-top: 7.5rem;
   color: var(--orange-main);
@@ -131,14 +143,16 @@ body {
   line-height: 4.5rem;
   letter-spacing: 2px;
 }
-.survival .survival-text {
+
+.survival-text {
   margin-top: 50px;
   width: 274px;
   height: 108px;
   font-size: 18px;
   line-height: 27px;
 }
-.survival .survival-button {
+
+.survival-button {
   margin-top: 30px;
   font-size: 23px;
   width: 160px;
@@ -149,11 +163,11 @@ body {
   color: var(--font-light);
   cursor: pointer;
 }
-.survival .survival-button:hover {
+.survival-button:hover {
   transition: 0.5s;
   background: var(--orange-light);
 }
-.survival .survival-button:active {
+.survival-button:active {
   transition: 0.5s;
   background: var(--orange-dark);
   border-color: var(--orange-dark);
@@ -184,10 +198,10 @@ body {
   height: 360px;
 }
 .articles .carousel {
-  max-width: 1020px;
   display: flex;
   margin: 0 auto;
   margin-top: 120px;
+  align-items: center;
 }
 .articles .carousel .animal-card {
   width: 300px;
@@ -222,8 +236,6 @@ body {
 
 .left-arrow, .right-arrow {
   cursor: pointer;
-  position: relative;
-  top: 160px;
 }
 .left-arrow:hover path, .right-arrow:hover path {
   transition: 0.5s;
@@ -231,11 +243,11 @@ body {
 }
 
 .left-arrow {
-  right: 60px;
+  margin-right: 60px;
 }
 
 .right-arrow {
-  left: 60px;
+  margin-left: 60px;
 }
 
 .email-container {
@@ -254,7 +266,8 @@ body {
 }
 
 .email {
-  width: 540px;
+  max-width: 540px;
+  width: 100%;
   height: 60px;
   margin-right: -4px;
   background: none;
@@ -308,16 +321,15 @@ input.email {
 
 .footer {
   height: 360px;
-  background: #020A0D;
+  background: url("./assets/images/footer.png") no-repeat top center, #020A0D;
 }
 .footer .container {
   height: 360px;
-  background: url("./assets/images/footer.png") no-repeat top center;
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
-.footer .container .footer-nav {
+.footer .footer-nav {
   display: flex;
   align-items: center;
 }
@@ -326,18 +338,20 @@ input.email {
   display: flex;
   flex-wrap: wrap;
 }
-.footer-list .footer-item {
+
+.footer-item {
   list-style: none;
   margin-right: 85px;
 }
-.footer-list .footer-item .footer-link {
+
+.footer-link {
   color: var(--font-light);
   text-decoration: none;
   font-weight: 400;
   font-size: 23px;
   line-height: 60px;
 }
-.footer-list .footer-item .footer-link:hover {
+.footer-link:hover {
   transition: 0.5s;
   color: var(--orange-light);
 }
@@ -355,35 +369,99 @@ input.email {
   fill: var(--orange-light);
 }
 
-@media (max-width: 1160px) {
-  .left-arrow {
-    right: -300px;
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 20px;
   }
-
-  .right-arrow {
-    left: -300px;
+}
+@media (max-width: 900px) {
+  .container {
+    padding: 0 20px;
   }
-
-  .animal-card:nth-child(2) {
+  .articles .carousel {
+    justify-content: center;
+  }
+  .articles .carousel .left-arrow {
+    margin-right: 20px;
+  }
+  .articles .carousel .right-arrow {
+    margin-left: 20px;
+  }
+  .articles .carousel .animal-card:nth-child(2) {
     display: none;
-    opacity: 0;
   }
-
-  .animal-card:nth-child(4) {
+  .articles .carousel .animal-card:nth-child(3) {
+    margin-right: 0;
+  }
+  .articles .carousel .animal-card:nth-child(4) {
     display: none;
-    opacity: 0;
   }
-
   .footer-list {
     flex-flow: column;
   }
-
+  .footer-item {
+    margin-right: 25px;
+  }
   .media-list li {
     margin-right: 15px;
   }
-
-  .footer-list .footer-item {
-    margin-right: 10px;
+}
+@media (max-width: 800px) {
+  .container {
+    max-width: 700px;
+  }
+  .header-list .header-item {
+    margin-right: 40px;
+    font-size: 1rem;
+  }
+  .logo-container .logo {
+    font-size: 1.5rem;
+  }
+  .sign-in {
+    width: 100px;
+    height: 35px;
+    font-size: 1rem;
+  }
+  .survival-button {
+    width: 120px;
+    height: 40px;
+    font-size: 1rem;
+  }
+}
+@media (max-width: 700px) {
+  .title {
+    padding-top: 4rem;
+    font-size: 2.5rem;
+  }
+  .survival-text {
+    margin-top: 25px;
+  }
+  .header-list, .footer-list {
+    display: none;
+  }
+  .survival {
+    height: 500px;
+    background: #020A0D url(./assets/images/survival.png) no-repeat center -76px;
+    position: relative;
+  }
+  .survival::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    filter: blur(5px);
+  }
+  .email-title {
+    margin-top: 120px;
+  }
+  .footer > .container > .logo-container {
+    display: none;
+  }
+  .footer, .footer > .container {
+    height: 180px;
   }
 }
 
